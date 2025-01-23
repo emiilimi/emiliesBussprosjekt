@@ -11,7 +11,6 @@ const port = 3000;
 app.use(express.json());
 
 const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-console.log(`Using credentials file: ${process.env.GOOGLE_APPLICATION_CREDENTIALS}`);
 
 
 // Sett opp BigQuery-klienten

@@ -29,6 +29,14 @@
         </ul>
     </footer>
     <script>
+      /**
+       * funksjonen henter ut aimed arrival (rutetid) og arrival time (ankomst i sanntid), returnerer som date-objekter.
+       * FORELØPIG: Dersom ankomst er null, settes ankomst til avgang. Dette vil fungere for avganger fra første stopp i ruten
+       * 
+       * @param {Object} datarow - raden som skal behandles   
+       * @returns {Array} - array med to date-objekter, aimedArrivalDate og arrivalDate
+       */
+
       function toDateArrival(datarow){ 
         //problemet her er at ankomst settes til avgang dersom ankomst er null. Dette vil funke for avganger fra første stopp, men avganger fra stopp underveis vil ha begge deler. Per nå håndteres ikke dette i tabellfunksjonen. 
         let arrivalDate=null
@@ -57,9 +65,17 @@
       }
 
 
-
-
+     
+  /**
+       * funksjonen regner ut gjennomsnittlig forsinkelse, prosentandel tidlige ankomster, tidligste ankomst og seneste ankomst
+       * Fjerner negative forsinkelser (tidlige ankomster) fra listen, og regner ut gjennomsnitt der de tidlige ankomstene settes til null (tidsnok). Logikken bak dette er at gjennomsnittlig forsinkelse ikke skal være null fordi bussen like ofte er forsinket som den kommer tidlig, men vil da ikke fange opp at en buss alltid er tidlig
+       * Se litt på hvordan dette kan håndteres bedre/gjøres mer oversiktlig...
+       * 
+       * @param {Array} data - data som skal behandles
+       * @returns {Array} - array med gjennomsnittlig forsinkelse, prosentandel tidlige ankomster, tidligste ankomst og seneste ankomst
+       */
       function gjennomsnittligForsinkelse(data){
+       
     let tidligeAnkomster=[]
     let utenNegative=[]
     let innenToMinutter=0
