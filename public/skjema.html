@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Skjema for databaseforespørsel</title>
+</head>
+<body>
+  <h1>Finn informasjon om en linje og holdeplass</h1>
+  <form action="/query" method="POST">
+    <label for="linjenummer">Linjenummer:</label>
+    <input type="text" id="linjenummer" name="linjenummer" required>
+    <br>
+    <label for="holdeplass">Holdeplass:</label>
+    <input type="text" id="holdeplass" name="holdeplass" required>
+    <br>
+    <button type="submit">Send inn</button>
+  </form>
+</body>
+</html>
