@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.get('/alleRuter',async (req,res)=>{
   try {
     // SQL-spørring til BigQuery
-    const query = 'SELECT lineRef, stopPointRef, stopPointName, aimedDepartureTime, departureTime, aimedArrivalTime, arrivalTime, dayOfTheWeek FROM  `ent-data-sharing-ext-prd.realtime_siri_et.realtime_siri_et_last_recorded` WHERE dataSource = "SKY" AND operatingDate = "2025-01-13" AND lineRef="SKY:Line:3" ORDER BY aimedDepartureTime, lineRef LIMIT 1000;'; // Endre spørringen etter dine behov
+    const query = 'SELECT lineRef, stopPointRef, stopPointName, aimedDepartureTime, departureTime, aimedArrivalTime, arrivalTime, dayOfTheWeek FROM  `ent-data-sharing-ext-prd.realtime_siri_et.realtime_siri_et_last_recorded` WHERE dataSource = "SKY" AND operatingDate = "2025-01-14" AND lineRef="SKY:Line:3" ORDER BY aimedDepartureTime, lineRef LIMIT 1000;'; // Endre spørringen etter dine behov
     const options = {
       query: query,
       location: 'EU', // Juster region om nødvendig

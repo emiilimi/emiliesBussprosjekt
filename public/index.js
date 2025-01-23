@@ -84,7 +84,7 @@
     console.log("tidligste ankomst var ", tidligsteAnkomst,"før rutetiden")
     console.log("seneste ankomst:", senesteAnkomst, "etter rutetid")
     console.log("innen to minutter: ",innenToMinutter)
-    return(snittForsinket,tidligProsent,tidligsteAnkomst,senesteAnkomst)
+    return([snittForsinket,tidligProsent,tidligsteAnkomst,senesteAnkomst])
     //regn ut gjennomsnittlig forsinkelse, samt andel avganger som kommer for tidlig. 
     //returner gjennomsnittlig forsinkelse, prosentandel tidlige ankomster, tidligste ankomst (min(tidlige ankoster), seneste ankomst (max(forsinkelser)))
 }//prosentandel avganger som er forsinket?? og gjennomsnitt for alle avgangene, men for tidlig teller ikke positivt. 
@@ -99,10 +99,10 @@
         const data = await response.json();
   
         // Call the function to generate the table with data
-        generateTable(data);
+        //generateTable(data);
         // Import the gjennomsnittligForsinkelse function from an external file
        
-        let a,b,c,d=(gjennomsnittligForsinkelse(data));
+        let [a,b,c,d]=(gjennomsnittligForsinkelse(data));
         console.log(a)
         console.log(b)
         console.log(c)
