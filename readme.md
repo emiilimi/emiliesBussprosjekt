@@ -54,7 +54,9 @@ Hvilke busser har laveste/høyeste gjennomsnittlige forsinkelse of all time (sid
 
 Antall avganger som var mer enn 10 minutter forsinket, hvilke linje som dominerer.
 
-Gjennomsnittlig forsinkelse for alle busslinjene (i går og of all time)
+Antall avganger som var tidsnok eller mindre enn 2 min forsinket
+
+Gjennomsnittlig forsinkelse for alle busslinjene (i går, og of all time(der "all time" er så lenge vi har data fra - tilbake til 2021?))
 
 
 #### Grafer
@@ -72,7 +74,8 @@ Eks: Gjennomsnittlig forsinkelse for alle bussene: fetch alle avganger (fra alle
 
 ### Litt om datasett(ene)
 
-
+kommer snart...
 
 ### Queries
 
+kommer snart...
