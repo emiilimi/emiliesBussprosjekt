@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@google-cloud/bigquery": "^7.9.1",
+    "@json2csv/node": "^7.0.6",
     "dotenv": "^16.4.7",
     "express": "^4.21.2"
   }

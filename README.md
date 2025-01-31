@@ -76,6 +76,26 @@ Eks: Gjennomsnittlig forsinkelse for alle bussene: fetch alle avganger (fra alle
 
 kommer snart...
 
-### Queries
+### Ruter
 
-kommer snart...
+#### /linje/:nummer
+Gir alle avgangene til en gitt linje fra alle stopp, i ett gitt tidsrom for å kunne regne gjennomsnittlig forsinkelse. Videre mulighet for avgrensning av stopp, retning, ukedag, tidsrom osv. 
+Hvor mye data vil vi egentlig ha? Og hva er hensiktsmessig? Data fra den siste måneden? 
+
+Grafer: gj.snittlig avvik per dag per tid
+Plotte avvikene (datapunkter), mot tid på døgnet (seaborn-graf? med utstikkere)
+
+#### /stopp/:id
+Fetch fra den ruten for å:
+Søk på stopp, få gjennomsnittlig forsinkelse i ett gitt tidsrom
+
+Grafer: avvik per dag per tid, avvik mot tid på døgnet, evt avvik mot ukedag
+Tall: Gjennomsnittlig avvik: i går, siste uken
+Leaderboard: Hvilke linjer er mest forsinket herfra?
+
+#### /alle/:dato
+Hente alle avganger fra en dato (typisk dagen i går): for homepage-statistikk
+Leaderboard: Hvilke linjer var mest forsinket i går, 
+
+#### /versteAvvik
+Henter kun avganger med en forsinkelse større enn 15 minutter? Da mulig å øke tidsrommet
