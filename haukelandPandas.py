@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data
-df = pd.read_csv("avganger_olavkyrresgate_uke5.csv", header=0)
+df = pd.read_csv("avganger_haukeland_uke5.csv", header=0)
 
 #remove columns directionRef
 df = df.drop(columns=['directionRef'])
@@ -15,7 +15,7 @@ df["aimedArrivalTime"] = pd.to_datetime(df["aimedArrivalTime"])
 df["aimedDepartureTime"] = pd.to_datetime(df["aimedDepartureTime"])
 df["operatingDate"] = pd.to_datetime(df["operatingDate"])
 
-print(df.head(5))
+#print(df.head(5))
 
 ## legger til avvik
 df["delayArrival"]=df["arrivalTime"]-df["aimedArrivalTime"]
@@ -47,15 +47,14 @@ for name, group in sortertEtterLinje:
     group.sort_values("rutetidUtenDato")
     linje=name.split(":")[2]
     
-    if not "E" in linje and (int(linje)==3 ) or linje=="50E":
+    if  linje=="12" or linje=="16E":
         times_in_minutes = group["rutetidUtenDato"].apply(lambda t: t.hour * 60 + t.minute + t.second/60)
         #plt.plot(times_in_minutes, group["delayArrival"].dt.total_seconds()/60, label=f"{name}", alpha=0.5),
-        plt.scatter(times_in_minutes/60, group["delayDeparture"].dt.total_seconds()/60, label=f"{name}", alpha=0.5, marker='x')
+        plt.scatter(times_in_minutes, group["delayDeparture"].dt.total_seconds()/60, label=f"{name}", alpha=0.5, marker='x')
         ##plt.scatter(times_in_minutes, group["delayArrival"].dt.total_seconds()/60, label=f"{name}", alpha=0.5)
 
 plt.xlabel("Aimed Deprature Time")
 plt.ylabel("Delay Departure (minutes)")
-plt.grid()
 ## set x axis to y=0
 plt.axhline(0, color='black', lw=1)
 plt.legend()
@@ -70,10 +69,11 @@ for name, group in sortertEtterLinje:
     linjeGruppertetterAvgang = group.groupby("rutetidUtenDato")
     ukesnittSer=linjeGruppertetterAvgang["delayDeparture"].mean()
     ##print(ukesnittSer.index)
-    if (not "E" in linje and (int(linje)==15 or int(linje)==12 or int(linje)==3)) or linje=="50E":
+    if linje=="12" or linje=="16E":
         #ukesnittSer.rolling(7).mean().plot(label=f"{name}", alpha=0.5)
-        plt.plot(pd.to_datetime(ukesnittSer.index, format='%H:%M:%S'), (ukesnittSer.dt.total_seconds()/60).rolling(15).mean(), label=f"{name}", alpha=0.5)
-plt.xlabel("foventet avganstid")
+        plt.scatter(pd.to_datetime(ukesnittSer.index, format='%H:%M:%S'), (ukesnittSer.dt.total_seconds()/60), label=f"{name}", alpha=0.5, marker="x")
+        plt.plot(pd.to_datetime(ukesnittSer.index, format='%H:%M:%S'), (ukesnittSer.dt.total_seconds()/60).rolling(window=5).mean(), label=f"{name}", alpha=0.5)
+plt.xlabel("forventet avganstid")
 plt.ylabel("Delay Departure (minutes)")
 plt.axhline(0, color='black', lw=1)
 plt.legend()

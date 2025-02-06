@@ -15,12 +15,8 @@ const bigquery = new BigQuery({
 
 const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 const stopPoints = [
-	"NSR:Quay:53114",
-	"NSR:Quay:53115",
-	"NSR:Quay:53118",
-	"NSR:Quay:53116",
-	"NSR:Quay:53117",
-	"NSR:Quay:53119"
+	"NSR:Quay:53898",
+	"NSR:Quay:53899"
 ];
 const dates=[
 	"2025-01-27",
@@ -66,7 +62,7 @@ hentData()
 				});
 		const json2csvParser = new Parser();
 		const csv = json2csvParser.parse(data);
-		fs.writeFile('avganger_olavkyrresgate_uke5.csv', csv, 'utf8', err => {
+		fs.writeFile('avganger_haukeland_uke5.csv', csv, 'utf8', err => {
 			if (err) {
 				console.error('Error writing to file', err);
 			} else {
