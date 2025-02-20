@@ -20,7 +20,7 @@ Det meste står i skjema i dokumentasjonen, har også laget min egen tabell (fra
 | begrep   | forklaring |
 | -------- | ---------- |
 | lineRef  | referanse til linjen, syntaks "SKY:Line:{linjenummer}"|
-| stopPointRef | referanse til stopp. Refererer til konkret platform (eks Fyllingsdalen terminal C). syntaks "NSR:Quay:{idnummer}". Kan søkes opp på https://stoppested.entur.org/  |
+| stopPointRef | referanse til stopp. Refererer til konkret platform (eks Fyllingsdalen terminal C). syntaks "NSR:Quay:{idnummer}". Kan søkes opp på https://stoppested.entur.org/ , ligger også i filen stops.txt (som jeg lastet ned fra entur ennellerannen gang for lenge siden) |
 | serviceJourneyId   |  id tilknyttet bussavgang. syntaks: {langt tall1}-{langt tall2}, der tall2 er likt for hele linjen. id vil være lik for hver bussavgang (altså f.eks 7.30 avgangen hverdager, men ikke nødvendigvis 7.30 lørdag. Har ikke 100% oversikt her)   |
 |aimedDepartureTime| rutetabellbestemt avgangstid til gitt stopp. syntaks: datetimeobj (?),2025-01-27 14:11:00+00:00. Nullobj: NaT |
 |departureTime| faktisk avgangstid fra det stoppet|
