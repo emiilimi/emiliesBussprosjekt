@@ -37,8 +37,32 @@ Det meste står i skjema i dokumentasjonen, har også laget min egen tabell (fra
 
 ## Eksempel på spørsmål du kan finne ut av:
 1) Hvordan kan vi regne ut og plotte forsinkelser? (veldig generelt spørsmål). se avgangerOlavKyrrePANDAS.ipynb, pandas.ipynb
-2) Hvilke busser er mest forsinket? 
+- Når er bussene mest forsinket? plotter grafer for dette i haukelandPandas.ipynb og olavKyrrePANDAS.py. I interaktivt plott i 4eren.ipynb kan man se den samme trenden.
 - Hvilke stopp langs en rute er en linje mest forsinket fra (løser dette i 4.eren.ipynb)
-- Hvilken buss er mest forsinket (gjennomsnittlig )fra et gitt stopp? 
-- Når er bussene mest forsinkket (i gjennomstnitt) fra et gitt stopp?
+2) Hvilke busser er mest forsinket? 
+- Hvilken buss er mest forsinket (gjennomsnittlig )fra et gitt stopp? (løser dette i manuell approach og haukeland.ipynb)
+-Hvilken buss er mest forsinket i gjennomsnitt?(over hele linjen/i en retning/på et gitt tidspunkt) - har ikke hentet nok data til å kunne svare på dette...
 
+
+
+## oversikt?
+### 4.eren.ipynb
+jobber med 4-er bussen, har hentet alle avgangene i uke 5.
+Ser først på datasettet i sin helhet.
+Deretter:
+Finner de 10 største forsinkelsene
+Finner de 10 mest forsinkede avgangene.
+ plotter litt forsinkelser over tid utover i ruten (lager artig interaktivt plott)
+ finner hvilke stopp som har størst og minst (gjennomsnittlige) forsinkelser
+
+### haukelandPandas.ipynb
+Ser på avganger fra haukeland sjukehus nord i uke 5
+
+plotter forsinkelser, gjennomsnittlige forsinkelser - per tid, per linje
+ og trender i form av glidene gjennomsnitt (med mer eller mindre suksess)
+
+### olavKyrrePANDAS.py
+forløperen til haukelandPandas, her plottes det forsinkelser og glidene gjennomsnitt, for avganger fra olav kyrres gate i uke 5
+
+### manuell_approach.py
+ser på avgangene fra haukeland, finner hvilken buss som går oftest, og gjennomsnittlig forsinkelse per linje
