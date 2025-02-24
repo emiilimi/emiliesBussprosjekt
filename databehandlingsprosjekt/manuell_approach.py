@@ -1,8 +1,7 @@
+##ser på avgangene fra haukeland, finner hvilken buss som går oftest, og gjennomsnittlig forsinkelse per linje
+
 import csv
 import datetime as dt
-#bokens tilnærming
-
-
 
 lister=[]
 with open("avganger_haukeland_uke5.csv", "r", encoding="utf-8-sig",newline="") as fil:

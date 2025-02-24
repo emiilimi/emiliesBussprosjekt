@@ -1,3 +1,8 @@
+#forløperen til haukelandPandas, her plottes det forsinkelser og glidene gjennomsnitt, for avganger fra olav kyrres gate i uke 5
+
+
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
